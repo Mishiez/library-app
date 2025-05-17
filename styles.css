@@ -2,3 +2,12 @@ p{
     color:red;
     border: 3px solid yellow;
 }
+
+table{
+    border: solid 1px black;
+  }
+  
+  table td{
+    border: solid 1px black;
+  }
+  
