@@ -39,17 +39,24 @@ function displayBook(){
         const tdPages = document.createElement("td");
         const tdRead = document.createElement("td");
         const tdId = document.createElement("td");
+        const remBtn = document.createElement('button');
+
         tdTitle.textContent = book.title;
         tdAuthor.textContent = book.author;   
         tdPages.textContent = book.pages;  
         tdRead.textContent = book.read;   
-        tdId.textContent = book.id;   
+        tdId.textContent = book.id;  
+        remBtn.textContent = 'Remove';
+        
         newRow.appendChild(tdTitle);
         newRow.appendChild(tdAuthor);
         newRow.appendChild(tdPages);
         newRow.appendChild(tdRead);
         newRow.appendChild(tdId);
+        newRow.appendChild(remBtn);
         newTable.appendChild(newRow);
+
+        remBtn.onclick = remBook;
     }
 
     const target = document.getElementById('target');
@@ -175,3 +182,10 @@ function addingBookForm(){
 }
 
 addingBookForm();
+
+function remBook(){
+    document.addEventListener("click",(e)=>{
+        const element = e.target;
+        element.remove();
+    });
+}
